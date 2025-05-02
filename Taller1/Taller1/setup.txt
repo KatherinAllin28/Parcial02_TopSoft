@@ -1,0 +1,32 @@
+Installed Apps
+Before starting, make sure you have installed python, pip, djangoand git:
+
+In linux follow this steps:
+
+sudo apt install -y git
+sudo apt install -y python3-pip
+sudo su pip3 install django
+python3 -m pip install --upgrade pip
+sudo apt-get install libgl1-mesa-glx
+sudo apt-get install tesseract-ocr
+Install requirements: pip install -r requirements.txt
+For other OS look for custom tutorials
+
+Set project
+Make sure to clone the repository using: git clone https://github.com/KatherinAllin28/taller1-soft
+Move to root folder: cd BRING_U_PROJECT
+Run migrations: python3 manage.py makemigrations
+python3 manage.py migrate
+Deployment
+To deploy the project, follow these steps:
+
+Export the secret API Key from openai using: export openAI_api_key="<your_API_key>"
+Collect static files: python manage.py collectstatic
+Run the ASGI server: daphne -b 0.0.0.0 -p 8000 config.asgi:application
+Access the application at GCP - custom URL or the appropriate URL.
+If not pretending to use realtime communication(Chat system), just use:
+
+Execute in root folder: python manage.py runserver
+If you want to use chat system:
+
+Execute in root folder daphne -b 0.0.0.0 -p 8000 config.asgi:application
